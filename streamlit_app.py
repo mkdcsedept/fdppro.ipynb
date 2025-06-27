@@ -1,3 +1,11 @@
+# Sidebar info
+st.sidebar.title("👤 About")
+st.sidebar.markdown("""
+**Name:** Your Name  
+**Team:** Your Team Name  
+**Department:** Your Department
+""")
+
 import streamlit as st
 from transformers import AutoModelForCausalLM, AutoTokenizer
 import torch
