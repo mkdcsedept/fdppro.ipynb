@@ -1,12 +1,5 @@
-# Sidebar info
-st.sidebar.title("👤 About")
-st.sidebar.markdown("""
-**Name:** Your Name  
-**Team:** Your Team Name  
-**Department:** Your Department
-""")
 
-import streamlit as st
+   import streamlit as st
 from transformers import AutoModelForCausalLM, AutoTokenizer
 import torch
 
@@ -18,6 +11,14 @@ def load_model():
     return tokenizer, model
 
 tokenizer, model = load_model()
+
+# Sidebar info
+st.sidebar.title("👤 About")
+st.sidebar.markdown("""
+**Name:** Your Name  
+**Team:** Your Team Name  
+**Department:** Your Department Name
+""")
 
 st.title("🎈 MY CHATBOX")
 st.write("This is My Chat.")
@@ -48,4 +49,3 @@ if user_input:
 # Display chat history
 for sender, message in st.session_state.chat_history:
     st.markdown(f"**{sender}:** {message}")
-
